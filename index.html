@@ -1,47 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
- <head>
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>contador</title>
 
-<style>
-    *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+</head>
 
-    }
-    body{
-        display: grid;
-        min-height: 100vh;
-        place-items: center;
-    }
-    .contador{
-        forced-color red;
-    }
-</style>
-
-  </head>
 <body>
     <h1 style="color: red;">contadores</h1>
-    <button onclick="somar()">total</button>
+
+    <button onclick="somar()">total:<span id="zero">0</span></button>
+
+    <button onclick="somar2()">total:<span id="zero2">0</span></button>
 
     <script>
 
-var numero = 0
+        let numero = 0
+        let numero2 = 0
 
-function somar(){
-    numero++
-    render()
-}
 
-function render(){
-    document.querySelector("button").innerText = `Total: ${numero}`;
-}
-render()
+        function somar() {
+            numero++
+            render()
+        }
+
+        function somar2() {
+            numero2++
+            render()
+        }
+
+        function render() {
+            document.querySelector("button").innerText = `Total: ${numero}`;
+            const zero2 = document.querySelector("#zero2")
+            zero2.innerText = numero2
+        }
+
+
+
+
+
+
+
+
+
+        render()
     </script>
 
 </body>
+
 </html>
-    
